@@ -1,3 +1,3 @@
-# Esercizi del 30/09/2024
+# Esercizi dell' 1/10/2024
 
-Branch dedicata agli esercizi svolti in HTML.
+Branch dedicata agli esercizi svolti in CSS.

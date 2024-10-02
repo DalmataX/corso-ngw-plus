@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrazione</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Benvenuto! Per poter accedere al sito per la prima volta, occorre
+        registrarsi.
+      </h1>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <h2>Compila il modulo per accedere:</h2>
+        <form action="home.html" method="GET">
+          <label for="name">Username:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <label for="gender">Sesso</label>
+          <select id="gender" name="gender" required>
+            <option value="male">Maschio</option>
+            <option value="female">Femmina</option>
+            <option value="other">Preferisco non rispondere</option>
+          </select>
+
+          <label for="team">Che sport pratichi?</label>
+          <select id="team" name="team">
+            <option value="frontend">Calcio</option>
+            <option value="backend">Basket</option>
+            <option value="videogiochi">Nuoto</option>
+            <option value="giochi-da-tavolo">Pallavolo</option>
+          </select>
+
+          <button type="submit">Registrati</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 ClassificheMondo. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
