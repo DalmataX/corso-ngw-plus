@@ -1,2 +1,3 @@
-# corso-ngw-plus
-Corso di Informatica NGW+
+# Esercizio Git
+
+Esercizio Git con modifica primo esercizio HTML
