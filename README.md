@@ -1,2 +1,3 @@
-# corso-ngw-plus
-Corso di Informatica NGW+
+# Esercizi Javascript
+
+branch dedicata alla consegna degli esercizi Javascript
