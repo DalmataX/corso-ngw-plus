@@ -1,10 +1,12 @@
 function valore() {
     let input;
-    while (input !== "ESCI") {
+    while (true) {
         input = prompt("Inserisci un valore:");
-        if (input !== "ESCI") {
-            console.log("Hai inserito:", input);
+        if (input === "ESCI") {
+            alert("Hai terminato il programma.");
+            break;
         }
+        alert("Hai inserito: " + input);
     }
-    console.log("Hai terminato il programma.");
 }
+
