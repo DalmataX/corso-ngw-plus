@@ -1,2 +1,3 @@
-# corso-ngw-plus
-Corso di Informatica NGW+
+# Esercizi Javascript
+
+4/10/2024
