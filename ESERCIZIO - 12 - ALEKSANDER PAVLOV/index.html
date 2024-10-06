@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina di Registrazione</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Registrazione Utente</h2>
+    <form id="registrazione">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Inserisci la tua email"
+      />
+
+      <label for="nome">Nome:</label>
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Inserisci il tuo nome"
+      />
+
+      <label for="cognome">Cognome:</label>
+      <input
+        type="text"
+        id="cognome"
+        name="cognome"
+        placeholder="Inserisci il tuo cognome"
+      />
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Inserisci la tua password"
+      />
+
+      <button type="submit">Registrati</button>
+    </form>
+
+    <div id="dati-utente">
+      <h1>Benvenuto!</h1>
+      <ul id="info-utente"></ul>
+    </div>
+
+    <script>
+      const form = document.getElementById("registrazione");
+      const userDataDiv = document.getElementById("dati-utente");
+      const userInfoList = document.getElementById("info-utente");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const nome = document.getElementById("nome").value;
+        const cognome = document.getElementById("cognome").value;
+        const password = document.getElementById("password").value;
+
+        if (!email || !nome || !cognome || !password) {
+          console.error("Tutti i campi sono obbligatori");
+          return;
+        }
+
+        userInfoList.innerHTML = `
+        <li>Email: ${email}</li>
+        <li>Nome: ${nome}</li>
+        <li>Cognome: ${cognome}</li>
+        <li>Password: ${password}</li>
+      `;
+
+        userDataDiv.style.display = "block";
+      });
+    </script>
+  </body>
+</html>

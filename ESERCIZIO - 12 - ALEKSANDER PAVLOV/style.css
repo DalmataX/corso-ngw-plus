@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 300px;
+}
+
+#user-data {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  display: none;
+}
