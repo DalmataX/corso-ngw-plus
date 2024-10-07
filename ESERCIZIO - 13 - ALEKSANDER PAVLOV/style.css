@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  background-color: orangered;
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+main {
+  margin: 50px auto;
+  padding: 20px;
+  width: 400px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: orangered;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: orangered;
+}
+
+#benvenuto {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+#logout-button {
+  width: 150px;
+  padding: 10px;
+  background-color: orangered;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#logout-button:hover {
+  background-color: orangered;
+}
+
+#campo-piatto {
+  width: 100%;
+  padding: 12px;
+  margin: 20px 0;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#sezione-piatto {
+  margin-top: 30px;
+}
+
+#sezione-piatto div {
+  border: 1px solid whitesmoke;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#sezione-piatto h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#sezione-piatto img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+#sezione-piatto p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: grey;
+}

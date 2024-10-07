@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricerca</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="benvenuto">Benvenuto, cerca un piatto</h1>
+
+    <button id="logout-button">Logout</button><br /><br />
+
+    <input type="text" id="campo-piatto" />
+    <button onclick="richiestaPiatto()">Cerca</button>
+    <section id="sezione-piatto"></section>
+
+    <script>
+      if (!localStorage.getItem("loggedIn")) {
+        window.location.href = "index.html";
+      } else {
+        const utente = JSON.parse(localStorage.getItem("utente"));
+        document.getElementById(
+          "benvenuto"
+        ).innerText = `Benvenuto, ${utente.username}, cerca un piatto`;
+      }
+
+      function cardPiatto(listaDiPiatti) {
+        document.getElementById("sezione-piatto").innerHTML = "";
+
+        for (let i = 0; i < listaDiPiatti.length; i++) {
+          let div = document.createElement("div");
+          let hNomePiatto = document.createElement("h3");
+          hNomePiatto.innerHTML = listaDiPiatti[i].strMeal;
+          let imagePiatto = document.createElement("img");
+
+          imagePiatto.src = listaDiPiatti[i].strMealThumb;
+          imagePiatto.width = 300;
+          imagePiatto.height = 200;
+
+          let instrPiatto = document.createElement("p");
+          instrPiatto.innerHTML = listaDiPiatti[i].strInstructions;
+
+          div.appendChild(hNomePiatto);
+          div.appendChild(imagePiatto);
+          div.appendChild(instrPiatto);
+
+          document.getElementById("sezione-piatto").appendChild(div);
+        }
+      }
+
+      async function richiestaPiatto() {
+        let valoreUtente = document.getElementById("campo-piatto").value;
+        let risposta = await fetch(
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${valoreUtente}`
+        );
+        let listaPiatti = await risposta.json();
+
+        if (listaPiatti.meals != null) {
+          cardPiatto(listaPiatti.meals);
+        } else {
+          alert("Nessun piatto trovato!");
+        }
+      }
+
+      document
+        .getElementById("logout-button")
+        .addEventListener("click", function () {
+          localStorage.removeItem("loggedIn");
+          window.location.href = "index.html";
+        });
+    </script>
+  </body>
+</html>

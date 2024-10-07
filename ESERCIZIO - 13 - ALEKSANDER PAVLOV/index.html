@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <h1>Login</h1>
+      <input type="text" id="logIn" placeholder="Username:" />
+      <input type="text" id="passWord" placeholder="Password:" />
+      <button onclick="accedi()">Accedi</button>
+    </main>
+    <footer></footer>
+    <script>
+      function accedi() {
+        let input = document.getElementById("logIn").value.trim();
+        let input_pass = document.getElementById("passWord").value.trim();
+
+        const utente = {
+          username: input,
+          password: input_pass,
+        };
+
+        if (input !== "" && input_pass !== "") {
+          localStorage.setItem("utente", JSON.stringify(utente));
+          localStorage.setItem("loggedIn", true);
+          window.location.href = "ricerca.html";
+        } else {
+          alert("Inserisci username e password validi");
+        }
+      }
+    </script>
+  </body>
+</html>

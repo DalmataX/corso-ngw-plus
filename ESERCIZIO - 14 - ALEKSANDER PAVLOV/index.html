@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meteo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Meteo Live</h1>
+      <form id="formMeteo">
+        <input
+          type="text"
+          id="inputCitta"
+          placeholder="Inserisci la citta'"
+          required
+        />
+        <button type="submit">Ottieni Meteo</button>
+      </form>
+      <div id="weatherResult" class="result"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("formMeteo")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const citta = document.getElementById("inputCitta").value;
+          ottieniMeteo(citta);
+        });
+
+      async function ottieniMeteo(citta) {
+        const chiaveAPI = "inserisci qui la chiave";
+        const urlAPI = `https://api.weatherapi.com/v1/current.json?key=${chiaveAPI}&q=${citta}&aqi=no`;
+
+        const risposta = await fetch(urlAPI);
+        const data = await risposta.json();
+        mostraMeteo(data);
+      }
+
+      function mostraMeteo(data) {
+        const weatherDiv = document.getElementById("weatherResult");
+        weatherDiv.innerHTML = `
+          <h2>Meteo a ${data.location.name}, ${data.location.country}</h2>
+          <p>Temperatura: ${data.current.temp_c}°C</p>
+          <p>Condizione: ${data.current.condition.text}</p>
+          <img src="https:${data.current.condition.icon}" class="weather-icon" alt="Icona meteo">
+          <p>Vento: ${data.current.wind_kph} km/h</p>
+        `;
+      }
+    </script>
+  </body>
+</html>
