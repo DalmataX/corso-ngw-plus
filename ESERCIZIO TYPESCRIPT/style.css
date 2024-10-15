@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+input,
+button {
+  margin: 5px;
+  padding: 5px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  cursor: pointer;
+}
+
+li:hover {
+  text-decoration: line-through;
+}
